@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link href="style.css" rel="stylesheet" media="all" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>button</title>
+</head>
+<body>
+    <h1>Test button</h1>
+    <a href="https://vuejs.org/v2/guide/installation.html#logo"
+      onMouseOver="return changeImage()"
+      onMouseOut ="return changeImageBack()"
+      onMouseDown="return handleMDown()"
+      onMouseUp  ="return handleMUp()"      >
+    <img
+    name="jsbutton" src="ButtonPrimaryHover.png" width="103" height="44" border="0"
+    alt ="javascript button"></a>
+     
+    <script language="JavaScript">
+     
+    upImage    = new Image();
+    upImage.src= "ButtonPrimaryHover.png";
+    downImage    = new Image();
+    downImage.src= "ButtonPrimaryHover.png"
+    normalImage    = new Image();
+    normalImage.src= "ButtonPrimaryIdle.png";
+     
+    function changeImage()
+    {
+      document.images["jsbutton"].src= upImage.src;
+      return true;
+    }
+    function changeImageBack()
+    {
+       document.images["jsbutton"].src = normalImage.src;
+       return true;
+    }
+    function handleMDown()
+    {
+     document.images["jsbutton"].src = downImage.src;
+     return true;
+    }
+    function handleMUp()
+    {
+     changeImage();
+     return true;
+    }
+    </script>
+</body>
+</html>
+
